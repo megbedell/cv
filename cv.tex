@@ -1,657 +1,118 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Friggeri Resume/CV
-% XeLaTeX Template
-% Version 1.2 (3/5/15)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Adrien Friggeri (adrien@friggeri.net)
-% https://github.com/afriggeri/CV
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Important notes:
-% This template needs to be compiled with XeLaTeX and the bibliography, if used,
-% needs to be compiled with biber rather than bibtex.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{clean_cv}
 
-\documentclass[]{luger-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+% Add a BibTeX-style file encoding all of your publications to include here. You can export this from Zotero. Only include
+% publications you want to appear here!
+\addbibresource{publications.bib}
 
-\usepackage{fontspec}
-\newfontfamily{\FA}[Path = fonts/]{fontawesome-webfont}
-
-\usepackage{ragged2e}
-
-\usepackage{marginnote}
-
-\def\faEnvelope{{\FA\symbol{"F0E0}}}
-\def\faGithub{{\FA\symbol{"F09B}}}
-\def\faDesktop{{\FA\symbol{"F108}}}
-\def\faPhone{{\FA\symbol{"F095}}}
-\def\faHandPointerO{{\FA\symbol{"F25A}}}
-\def\faMapMarker{{\FA\symbol{"F041}}}
-\def\faVideoCamera{{\FA\symbol{"F03D}}}
-\def\faCloudDownload{{\FA\symbol{"F0ED}}}
-
-\input{citationskip}
+\author{Megan Bedell}
+%\headlineposition{Astronomer}
 
 \begin{document}
 
-\header
-
-%----------------------------------------------------------------------------------------
-%	COORDINATES
-%----------------------------------------------------------------------------------------
-
-\aside{coordinates}{0.0325}{
-    %
-    \vspace*{-0.1cm}
-    %
-    \href{mailto:rodluger@gmail.com}{{\addfontfeature{Color=linkblue}rodluger@gmail.com}\ \faEnvelope}\\[0.5em]
-    %
-    \href{https://github.com/rodluger}{{\addfontfeature{Color=linkblue}github.com/rodluger}\ \faGithub}\\[0.5em]
-    %
-    \href{https://luger.dev}{{\addfontfeature{Color=linkblue}luger.dev}\ \faHandPointerO}\\[0.5em]
-    %
-    \href{tel:610-675-6056}{{\addfontfeature{Color=linkblue}+1 (610) 675 6056}\ \faPhone}\\[0.5em]
-    %
-    \href{https://www.google.com/maps/place/Center+for+Computational+Astrophysics/@40.7406078,-73.9906964,15z/data=!4m2!3m1!1s0x0:0xaa8b3847c99de596?sa=X&sqi=2&ved=2ahUKEwjk5bPEyp3dAhWqsKQKHUPgDkoQ_BIwDXoECAcQCw}{{\addfontfeature{Color=linkblue}\small Center for Computational }\\
-        \href{https://www.google.com/maps/place/Center+for+Computational+Astrophysics/@40.7406078,-73.9906964,15z/data=!4m2!3m1!1s0x0:0xaa8b3847c99de596?sa=X&sqi=2&ved=2ahUKEwjk5bPEyp3dAhWqsKQKHUPgDkoQ_BIwDXoECAcQCw}{{\addfontfeature{Color=linkblue}\small Astrophysics, NY}}\ \faMapMarker}
-    %
-}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-
-\section{education}
-
-\begin{entrylist}
-
-    %------------------------------------------------
-
-    \entry
-    {2012--2017}
-    {PhD {\normalfont Astronomy and Astrobiology}}
-    {University of Washington, Seattle WA}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item On the evolution, detection, and characterization of small \\ planets in the habitable zones of M dwarfs
-            \item Advised by Eric Agol, Rory Barnes, and Victoria Meadows
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2012--2013}
-    {MSc {\normalfont Astronomy and Astrobiology}}
-    {University of Washington, Seattle WA}
-
-    %------------------------------------------------
-
-    \entry
-    {2006--2010}
-    {BA {\normalfont Astrophysics}}
-    {Swarthmore College, Swarthmore PA}
-    {\vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Minor in English Literature
-        \end{list}}
-
-    %------------------------------------------------
-
-\end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	ABOUT
-%----------------------------------------------------------------------------------------
-
-\aside{about}{0.0325}{
-    \footnotesize
-    \mbox{I~am~a~postdoctoral~fellow~at}
-    \mbox{the~Center~for~Computational}
-    \mbox{Astrophysics~in~New~York~City,}
-    \mbox{working~on~finding~novel~ways}
-    \mbox{to~discover~and~characterize}
-    \mbox{exoplanets.~I~am~broadly~inter-}
-    \mbox{ested~in~exocartography,~astro-}
-    \mbox{statistics,~noise~modeling,}
-    \mbox{\&~general~analytic~techniques}
-    \mbox{for~astronomy.~Outside~of~the}
-    \mbox{office~I~love~to~hike,~cycle,~swim,}
-    \mbox{craft~lattes,~faulty~parallelism,}
-    \mbox{and~Oxford~commas.}
-}
-
-%----------------------------------------------------------------------------------------
-%	POSITIONS
-%----------------------------------------------------------------------------------------
-
-\section{positions}
-
-\begin{entrylist}
-
-    %------------------------------------------------
-
-    \entry
-    {2018--}
-    {Flatiron Fellow}
-    {Center for Computational Astrophysics, New York, NY}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Work on statistical and computational data analysis problems
-                  \ifdefined \onepage \else
-                      applied to stellar and exoplanetary astronomy
-                  \fi
-            \item Develop algorithms and open-source software for timeseries analysis
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2017--2018}
-    {Postdoctoral Researcher}
-    {University of Washington}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Developed photometric de-trending methods to aid in the search for small
-                  planets transiting small stars; developed and maintained the \texttt{everest} pipeline
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2012--2017}
-    {Research Associate}
-    {University of Washington}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Developed techniques to detect and characterize habitable
-                  zone planets
-            \item Investigated the atmospheric evolution of planets orbiting M dwarfs
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \ifdefined \onepage \else
-        \entry
-        {2008--2009}
-        {Student Researcher}
-        {Swarthmore College}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Research under Professor Eric Jensen on planet formation and T Tauri disks
-            \end{list}
-        }
-    \fi
-
-    %------------------------------------------------
-
-\end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	STATS
-%----------------------------------------------------------------------------------------
-
-\aside{stats}{0.075}{
-    \vspace*{0.5em}
-    \input{pubs_summary}
-}
-
-%----------------------------------------------------------------------------------------
-%	AWARDS
-%----------------------------------------------------------------------------------------
-
-\section{honors}
-
-\begin{entrylist}
-
-    \entry
-    {2018--2022}
-    {Flatiron Fellowship}
-    {Center for Computational Astrophysics, New York, NY}
-    {%
-        \vspace*{-1.1em}
-    }
-
-    %------------------------------------------------
-    \entry
-    {2018}
-    {Hubble Postdoctoral Fellowship}
-    {(Declined)}
-    {%
-        \vspace*{-1.1em}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2018}
-    {51 Pegasi b Fellowship}
-    {(Declined)}
-    {%
-        \vspace*{-1.1em}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2012--2015}
-    {ARCS Fellowship}
-    {University of Washington}
-    {%
-        \vspace*{-1.1em}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2010}
-    {Bobby Berman Memorial Prize}
-    {Swarthmore College}
-    {%
-        \vspace*{-1.1em}
-    }
-
-    %------------------------------------------------
-
-    \ifdefined \onepage \else
-        \entry
-        {2010}
-        {The Phi Beta Kappa Society}
-        {Swarthmore College}
-        {}
-    \fi
-
-    %------------------------------------------------
-
-\end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	SOFTWARE
-%----------------------------------------------------------------------------------------
-
-\aside{popular code}{0.0325}{
-    \href{https://github.com/rodluger/starry}{\texttt{starry}}\\
-    Analytic light curves\\[0.3em]
-    \href{https://github.com/rodluger/planetplanet}{\texttt{planetplanet}}\\
-    P-P occultations\\[0.3em]
-    \href{https://github.com/rodluger/everest}{\texttt{everest}}\\
-    \emph{K2} de-trending\\
-}
-
-%----------------------------------------------------------------------------------------
-%	METRICS
-%----------------------------------------------------------------------------------------
-
-\ifdefined \onepage \else
-    \section{metrics}
-
-    % SUPER HACKY
-    \raisebox{-0.9\height}[0pt][0pt]{
-        \includegraphics[height=1.25in]{metrics.pdf}
-    }
-    \pagebreak
-\fi
-
-%----------------------------------------------------------------------------------------
-%	Refs
-%----------------------------------------------------------------------------------------
-
-\ifdefined \onepage \else
-    \aside{references}{0.05}{
-    %\vspace*{0.5em}
-    \textbf{eric agol}\\
-    {\footnotesize agol@uw.edu}\\[0.5em]
-
-    \textbf{david w. hogg}\\
-    {\footnotesize dhogg@flatironinstitute.org}\\[0.5em]
-
-    \textbf{dan foreman-mackey}\\
-    {\footnotesize foreman.mackey@gmail.com}\\[0.5em]
-
-    \textbf{rory barnes}\\
-    {\footnotesize rory@astro.washington.edu}
-    }
-\fi
-
-%----------------------------------------------------------------------------------------
-%	TEACHING
-%----------------------------------------------------------------------------------------
-
-\section{teaching \& outreach}
-
-\begin{entrylist}
-
-    %------------------------------------------------
-
-    \entry
-    {2020-}
-    {Mentor, Simons-NSBP Program}
-    {Flatiron Institute}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Mentor black undergraduate students through the Simons-National
-                  Society of Black Physicists summer program
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \entry
-    {2019-}
-    {Mentor, AstroCom}
-    {AMNH / CUNY}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Mentor undergraduate students from underrepresented groups in the sciences
-                  at the City University of New York
-        \end{list}
-    }
-
-    %------------------------------------------------
-
-    \ifdefined \onepage \else
-
-        \entry
-        {2019-}
-        {Lecturer, LSST Data Science Fellowship}
-        {Carnegie Mellon / Flatiron Institute}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Lectured on various topics related to statistical
-                      inference at week-long schools for early-career astronomers
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-        \entry
-        {2012--2017}
-        {Mobile Planetarium}
-        {University of Washington}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Presented planetarium shows at schools and public venues throughout
-                      Washington state using UW's inflatable mobile planetarium
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-        \entry
-        {2012--2013}
-        {Teaching Assistant}
-        {University of Washington}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Taught two bi-weekly tutorial sessions for two college astronomy courses
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-    \fi
-
-    \ifdefined \onepage \else
-\end{entrylist}
+\maketitle
+% In this section, you can use any of the FontAwesome icons. The commands \faCenter and \faCenterStyle have been defined to properly center the icons
+% when using the default font settings.
 %
-% PAGEBREAK
-%
-\begin{entrylist}
-    \fi
+% You can use any of the icons listed in the fontawesome5 package documentation (https://ctan.math.utah.edu/ctan/tex-archive/fonts/fontawesome5/doc/fontawesome5.pdf)
+% If you need to specify a specific style (as is done here for the address card), you should use the two-argument \faCenterCycle command
+\begin{center}
+\begin{tabular}{lll}
+    \faCenter{envelope} \href{mailto:mbedell@flatironinstitute.org}{mbedell@flatironinstitute.org}  & \faCenter{phone-alt} +1 518 488 9348 & \faCenterStyle{regular}{address-card} 162 5th Avenue, New York, NY 10010 \\
+    \faCenter{orcid} \href{https://orcid.org/0000-0001-9907-7742}{0000-0001-9907-7742} & \faCenter{github} \href{https://github.com/megbedell}{megbedell} & \faCenter{globe} \url{https://bedell.space} \\
+\end{tabular}
+\end{center}
 
-    %------------------------------------------------
+\vspace{-1.5em}
 
-    \entry
-    {2010--2012}
-    {High School Teacher}
-    {St. Luke's School, New Canaan CT}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Created and taught a rigorous, college-level elective course in astrophysics
-                  aimed at seniors interested in pursuing college classes in the field
-            \item Taught three sections of 11th grade physics with a focus on
-                  astronomy
-                  \ifdefined \onepage \else
-                      , helping students develop critical thinking and creative
-                      problem solving skills
-                  \fi
-        \end{list}
-    }
+\section{Education}
 
-    %
+% The datetabular environment takes one argument, which is the width of the left date column. As seen here:
+%   9em is a good choice for "dual-date" formats (e.g. Sep 2015 - Nov 2019).
+%   4em is a good choice for month/year dates (Sep 2014).
+%   2em is a good choice for year-only dates (as seen in the publications)
+\begin{datetabular}{9em}
+% This is just a tabular environment, for the most part. The dateentry command has been defined for
+% convienence. It takes two arguments, the first is the date and the second is whatever you wish placed to the right.
+\dateentry{2012 -- 2017}{
+\textbf{University of Chicago}
 
-    \ifdefined \onepage \else
-        \entry
-        {2009--2010}
-        {Science Associate \& Tutor}
-        {Swarthmore College}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Directed weekly large-group study sessions for an introductory course in
-                      astronomy; tutored students in courses in mechanics and E\&M
-            \end{list}
-        }
-    \fi
+Ph.D. in Astronomy \& Astrophysics
+\textit{\newline Dissertation Title: Illuminating the Origins of Planets with Solar Twins
+\newline Advisor: Jacob L. Bean}
+}
+\dateentry{2008 -- 2012}{
+\textbf{Haverford College}
 
-    %------------------------------------------------
+B.S. with Honors in Physics and with Highest Honors in Astronomy}
 
-\end{entrylist}
+\end{datetabular}
 
-%----------------------------------------------------------------------------------------
-%	STUDENTS
-%----------------------------------------------------------------------------------------
+\section{Employment}
+\begin{datetabular}{9em}
+\dateentry{2019 -- present}{
+\textbf{Associate Research Scientist}, Flatiron Institute
+
+\textit{Junior faculty equivalent at a non-profit research institute}}
+
+\dateentry{2017 -- 2019}{
+\textbf{Flatiron Research Fellow}, Flatiron Institute
+
+\textit{Independent postdoctoral research fellowship}}
+
+% There is something seriously funky happening between the tabular commands and the end of the itemize blocks.
+% The command \eatvspace should be used if extra space appears at the end of a datetabular environment.
+\end{datetabular}
+\vspace{-5mm}
+
+\section{Affiliations \& Memberships}
+\begin{datetabular}{9em}
+\dateentry{2021 -- present}{
+\textbf{Research Associate}, American Museum of Natural History
+
+\textit{Zero-time honorary affiliation with NYC-area academic institution}}
+
+\dateentry{2020 -- present}{
+\textbf{Science Team member}, Keck Planet Finder team
+
+\textit{Contributor to science planning and observing/funding proposals for next-generation \textsc{EPRV} spectrograph \textsc{KPF}}}
+
+\dateentry{2018 -- present}{
+\textbf{Member}, \textsc{HARPS3}/Terra Hunting Experiment consortium
+
+\textit{Flatiron Institute representative in the consortium overseeing construction \& use of the next-generation \textsc{EPRV} spectrograph \textsc{HARPS3}; member of the Terra Hunting Experiment Science Working Group and leader of the Data Analysis sub-group}}
+\end{datetabular}
 
 
-\ifdefined \withother
+\section{Mentorship}
 
-    \section{students}
-    \begin{entrylist}
+\section{Academic Service}
 
-        %------------------------------------------------
+\section{Teaching \& Outreach}
 
-        \entry
-        {2020--}
-        {Shashank Dholakia}
-        {University of California, Berkeley}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Developing analytic transit light curve models for oblate stars
-            \end{list}
-        }
 
-        %------------------------------------------------
+\section{Honors}
 
-        \entry
-        {2020--}
-        {Shishir Dholakia}
-        {University of California, Berkeley}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Developing analytic transit light curve models for oblate stars
-            \end{list}
-        }
+\begin{itemize}
+    \item Outstanding Paper Award, International Astrostatistics Association \textit{(2020)}
+    \item Josephine DeKarman Fellow \textit{(2016--2017)}
+    \item Lewis \& Clark Field Scholar in Astrobiology \textit{(2016--2017)}
+    \item Illinois Space Grant Fellow \textit{(2016--2017)}
+    \item University of Chicago Harper Dissertation Fellow \textit{(2016--2017)}
+    \item NSF Graduate Research Fellow \textit{(2013--2016)}
+    \item Phi Beta Kappa \textit{(2012)}
+\end{itemize}
 
-        %------------------------------------------------
+\section{Publications}
+\nocite{*} % Loads every entry from the attached .bib file
+% Highlight takes three entries, given name, given name initials, and family name.
+% If you have a middle initial, this call looks like:
+% \highlightauthorname{Bob H.}{B. H.}{Smith}
+\highlightauthorname{Megan}{M.}{Bedell} 
+\begin{datetabular}{2em}
+%printbibyear has been defined to only print entries from a given citation year.
+%\dateentry{2021}{\printbibyear{2021}}
+%\dateentry{2020}{\printbibyear{2020}}
 
-        \entry
-        {2020--2021}
-        {Rebecca Young}
-        {Simons-NSBP Scholars Program, CCA}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Inferring differential rotation rates from \emph{Kepler} light curves
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-        \entry
-        {2020--}
-        {Fran Bartoli\'c}
-        {Pre-doctoral Program, CCA}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Mapping the surface of Io from Jupiter occultation data
-            \end{list}
-        }
-
-        \entry
-        {2019--}
-        {Asmaa Elsayed}
-        {AstroCom Program, CUNY/CCA}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Understand the time evolution of spotted stellar surfaces
-            \end{list}
-        }
-
-        \entry
-        {2019}
-        {Brynner Hidalgo}
-        {AstroCom Program, CUNY/CCA}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Understand the time evolution of spotted stellar surfaces
-            \end{list}
-        }
-
-        \entry
-        {2016--2018}
-        {Nicholas Saunders}
-        {University of Washington}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Develop tools to mitigate systematics in \emph{K2} data
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-    \end{entrylist}
-\fi
-
-\clearpage
-
-%----------------------------------------------------------------------------------------
-%	OTHER
-%----------------------------------------------------------------------------------------
-
-\ifdefined \withother
-
-    \section{other}
-    \begin{entrylist}
-
-        %------------------------------------------------
-
-        \entry
-        {2018--}
-        {Organizer, Stars and Exoplanets Meeting}
-        {CCA}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Organize weekly meeting for NYC area graduate students, postdocs, \& faculty
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-        \entry
-        {2013--2017}
-        {IT Manager}
-        {Virtual Planet Laboratory, University of Washington}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Managed VPL's virtual conferencing system and network
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-        \entry
-        {2010--2012}
-        {Head Coach}
-        {St. Luke's School, New Canaan CT}
-        {%
-            \vspace{-1em}
-            \begin{list}{$+$}{\cvlist}
-                \item Head coach of the JV Boys Soccer and Fencing Teams
-                      %\item Assistant coach of the MS Tennis Team
-            \end{list}
-        }
-
-        %------------------------------------------------
-
-    \end{entrylist}
-\fi
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-
-\ifdefined \withpubs
-    %
-    \ifdefined \citationskip
-    \else
-        \def\citationskip{0.95}
-    \fi
-    \aside{}{\citationskip}{
-    {\footnotesize citations $\longrightarrow$}\\[0em]
-    {\footnotesize (refereed in \textbf{bold})}
-    }
-    %
-    \section{publications}
-    %
-    \begin{list}{}{\pubslist}
-        \input{pubs}
-    \end{list}
-    %
-    \vspace{1em}
-\fi
-
-%----------------------------------------------------------------------------------------
-%	TALKS
-%----------------------------------------------------------------------------------------
-
-%\clearpage
-
-\ifdefined \withtalks
-
-    \section{selected talks}
-    %
-    \begin{list}{}{\pubslist}
-        \input{talks}
-    \end{list}
-\fi
+\end{datetabular}
 
 \end{document}

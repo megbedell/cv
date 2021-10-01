@@ -66,12 +66,12 @@ def format_authors(authors):
 def manual_exclude(paper):
     """Manual exclusions."""
     # Remove DDS talks
-    if paper.pub == "LPI Contributions":
-        return True
+    #if paper.pub == "LPI Contributions":
+    #    return True
 
     # Remove DS Tuc duplicate
-    if "Four Newborn Planets" in format_title(paper.title[0]) and paper.doi is None:
-        return True
+    #if "Four Newborn Planets" in format_title(paper.title[0]) and paper.doi is None:
+    #    return True
 
     return False
 
@@ -117,9 +117,9 @@ def get_papers(author, count_cites=True):
     for paper in tqdm(papers):
 
         if not (
-            ("Luger, Rodrigo" in paper.author)
-            or ("Luger, R." in paper.author)
-            or ("Luger, R" in paper.author)
+            ("Bedell, Megan" in paper.author)
+            or ("Bedell, M." in paper.author)
+            or ("Bedell, M" in paper.author)
         ):
             continue
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     else:
         clobber = False
     if clobber or not os.path.exists("pubs.json"):
-        papers = get_papers("Luger, R", count_cites=True)
+        papers = get_papers("Bedell, M", count_cites=True)
         with open("pubs.json", "w") as f:
             json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
     else:
