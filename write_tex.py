@@ -23,20 +23,28 @@ JOURNAL_MAP = {
 def format_pub(args):
     ind, pub = args
 
+    student_paper_titles = ['Actions Are Weak Stellar Age Indicators in the Milky Way Disk',
+                            'Excalibur: A Nonparametric, Hierarchical Wavelength Calibration Method for a Precision Spectrograph']
+
+    ''' 
     cites = pub["citations"]
     if cites == 0 or cites is None:
         cites = "\\textemdash"
     if pub["doctype"] == "article":
-        fmt = "\\item[{{\\color{{numcolor}}\\scriptsize\\bfseries{0}}}] ".format(cites)
+        fmt = "\\item[{{\\scriptsize\\bfseries{0}}}] ".format(cites)
     else:
-        fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
+        fmt = "\\item[{{\\scriptsize{0}}}] ".format(cites)
+    '''
+    fmt = "\item "  # replace citation info with a bullet point
     n = [i for i in range(len(pub["authors"])) if "Bedell, M" in pub["authors"][i]][0]
     pub["authors"][n] = "\\textbf{Bedell, M.}"
+    if pub["title"] in student_paper_titles:
+        pub["authors"][0] = "\\textbf{{{0}*}}".format(pub["authors"][0])
     if len(pub["authors"]) > 5:
         fmt += ", ".join(pub["authors"][:4])
         fmt += ", \etal"
-        if n >= 4:
-            fmt += "\\ (including\\ \\textbf{Bedell, M.})"
+        #if n >= 4:
+        #    fmt += "\\ (including\\ \\textbf{Bedell, M.})"
     elif len(pub["authors"]) > 1:
         fmt += ", ".join(pub["authors"][:-1])
         fmt += ", \\& " + pub["authors"][-1]
@@ -47,7 +55,7 @@ def format_pub(args):
 
     title = pub["title"]
     title = title.replace("\u2500", "-")
-    title = title.replace("TRAPPIST-1", "TRAP\\-PIST-1")
+    #title = title.replace("TRAPPIST-1", "TRAP\\-PIST-1")
     if pub["doi"] is not None:
         fmt += ", \\doi{{{0}}}{{{1}}}".format(pub["doi"], title)
     elif pub["arxiv"] is not None:
@@ -105,9 +113,10 @@ if __name__ == "__main__":
     # Get pubs
     with open("pubs.json", "r") as f:
         pubs = json.load(f)
-    with open("pubs_manual.json", "r") as f:
-        pubs_manual = json.load(f)
-    pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+    #with open("pubs_manual.json", "r") as f:
+    #    pubs_manual = json.load(f)
+    #pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+    pubs = sorted(pubs, key=itemgetter("pubdate"), reverse=True)
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     ref = [p for p in pubs if p["doctype"] == "article"]
     unref = [p for p in pubs if p["doctype"] == "eprint"]
@@ -139,9 +148,10 @@ if __name__ == "__main__":
         f.write("\n\n".join(pubs))
 
     # Get talks
-    with open("talks.json", "r") as f:
-        talks = json.load(f)
-    talks = sorted(talks, key=itemgetter("pubdate"), reverse=True)
-    talks = list(map(format_talk, zip(range(len(talks), 0, -1), talks)))
-    with open("talks.tex", "w") as f:
-        f.write("\n\n".join(talks))
+    if False:
+        with open("talks.json", "r") as f:
+            talks = json.load(f)
+        talks = sorted(talks, key=itemgetter("pubdate"), reverse=True)
+        talks = list(map(format_talk, zip(range(len(talks), 0, -1), talks)))
+        with open("talks.tex", "w") as f:
+            f.write("\n\n".join(talks))

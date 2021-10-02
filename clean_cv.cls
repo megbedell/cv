@@ -111,3 +111,61 @@
 }
 
 \pagestyle{empty}
+
+% ---- CUSTOM COLORS
+
+\usepackage{hyperref}
+\definecolor{niceblue}{rgb}{0.0, 0.4, 0.65}
+\definecolor{linkcolor}{rgb}{0.02,0.35,0.55}
+\definecolor{citecolor}{rgb}{0.4,0.4,0.4}
+\hypersetup{colorlinks=true,linkcolor=linkcolor,citecolor=citecolor,
+            filecolor=linkcolor,urlcolor=linkcolor}
+
+
+% ----- LUGER CLASS ----
+
+% Text formatting.
+\newcommand{\foreign}[1]{\textit{#1}}
+\newcommand{\etal}{\foreign{et~al.}}
+
+% literature links--use doi if you can
+
+\newcommand{\doi}[2]{\href{http://dx.doi.org/#1}{{#2}}}
+\newcommand{\link}[2]{\emph{\href{#1}{{#2}}}}
+\newcommand{\ads}[2]{{\href{http://adsabs.harvard.edu/abs/#1}}{{#2}}}
+\newcommand{\arxiv}[2]{\emph{\href{http://arxiv.org/abs/#1}{{#2}}}}
+\newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
+
+% Journal names.
+\newcommand{\aj}{AJ}
+\newcommand{\apj}{ApJ}
+\newcommand{\pasp}{PASP}
+\newcommand{\mnras}{MNRAS}
+
+\newcommand{\pubslist}{%
+    \rightmargin=0in
+    \leftmargin=0.15in
+    \topsep=0ex
+    \partopsep=0pt
+    \itemsep=1.25ex
+    \parsep=0pt
+    \itemindent=-1.0\leftmargin
+    \listparindent=0.0\leftmargin
+    \settowidth{\labelsep}{~}
+}
+
+%%%%%%%%%%%%%%
+% Side block %
+%%%%%%%%%%%%%%
+
+\RequirePackage[overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\newcommand{\aside}[3]{
+    \begin{textblock}{3.6}(-4.5, #2)
+        \begin{flushright}
+            \section{#1}
+                #3
+        \end{flushright}
+    \end{textblock}
+}

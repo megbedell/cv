@@ -132,9 +132,10 @@ def plot_papers(ax, year1=2015):
     # Get pub dates
     with open("pubs.json", "r") as f:
         pubs = json.load(f)
-    with open("pubs_manual.json", "r") as f:
-        pubs_manual = json.load(f)
-    pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+#    with open("pubs_manual.json", "r") as f:
+#        pubs_manual = json.load(f)
+#    pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+    pubs = sorted(pubs, key=itemgetter("pubdate"), reverse=True)
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     pubdates = []
     for pub in pubs:
@@ -159,13 +160,13 @@ def plot_papers(ax, year1=2015):
     ax.set_xlim(year1, datetime.now().year + datetime.now().month / 12)
 
 
-def make_plots():
+def make_plots(year1=2015):
     fig, ax = plt.subplots(1, 5, figsize=(16, 2))
     fig.subplots_adjust(wspace=0.6)
-    plot_papers(ax[0])
-    plot_cites(ax[1])
-    plot_stars(ax[2])
-    plot_metrics(ax[3])
+    plot_papers(ax[0], year1=year1)
+    plot_cites(ax[1], year1=year1)
+    plot_stars(ax[2], year1=year1)
+    plot_metrics(ax[3], year1=year1)
     for axis in ax[4:]:
         axis.axis("off")
 
@@ -173,4 +174,4 @@ def make_plots():
 
 
 if __name__ == "__main__":
-    make_plots()
+    make_plots(year1=2014)

@@ -120,6 +120,7 @@ def get_papers(author, count_cites=True):
             ("Bedell, Megan" in paper.author)
             or ("Bedell, M." in paper.author)
             or ("Bedell, M" in paper.author)
+            or ("Bedell, Megan E." in paper.author)
         ):
             continue
 
