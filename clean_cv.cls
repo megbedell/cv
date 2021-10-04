@@ -124,6 +124,9 @@
 
 % ----- LUGER CLASS ----
 
+\RequirePackage{ifthen}
+\RequirePackage{graphicx}
+
 % Text formatting.
 \newcommand{\foreign}[1]{\textit{#1}}
 \newcommand{\etal}{\foreign{et~al.}}
